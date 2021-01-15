@@ -112,7 +112,6 @@ public class DebtPaymentService {
 			DayOfWeek dw = startDateLocalDate.getDayOfWeek();
 			LocalDate ld = lastPaymentDate.toInstant().atZone(ZoneId.of("UTC")).toLocalDate();
 			ld = ld.with(TemporalAdjusters.next(dw));
-			System.out.println(Date.from(ld.atStartOfDay(ZoneId.of("UTC")).toInstant()));
 			return java.util.Date.from(ld.atStartOfDay()
 				      .atZone(ZoneId.of("UTC"))
 				      .toInstant());
